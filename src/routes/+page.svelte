@@ -1,2 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    export let form;
+</script>
+
+<form method="POST">
+	<label>
+		Input
+		<input name="input" type="text" />
+	</label>
+	<button>Generate</button>
+    <p>{ form?.result}</p>
+</form>
