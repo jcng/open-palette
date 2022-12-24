@@ -13,15 +13,22 @@ export const actions = {
         const data = await event.request.formData();
         const inputData = data.get('input');
 
+
         const completion = await openai.createCompletion({
-            model: "text-davinci-002",
-            prompt: `Suggest three hex codes for a ${inputData} aesthetic in this format:
-            [Hex code 1, Hex code 2, Hex code 3]`,
-            temperature: 0.3
-        });
+            model: "text-davinci-003",
+            prompt: `Three hexcode colors for a \"${inputData}\" aesthetic:`,
+            temperature: 0.7,
+            max_tokens: 27,
+            top_p: 1,
+            frequency_penalty: 0,
+            presence_penalty: 0,
+          });
 
         console.log(completion.data.choices)
-        return { result: completion.data.choices[0].text };
+        return {
+            result: completion.data.choices[0].text,
+            input: inputData
+        };
 
         // return {result: "yes"}
     }
