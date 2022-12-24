@@ -1,19 +1,31 @@
 <script>
-    export let form;
+	export let form;
 
-	let colors = form?.result.trim().replaceAll(" ", "").split(",");
+	let colors = form?.result.trim().replaceAll(' ', '').split(',');
 	console.log(colors);
 </script>
 
-<form method="POST">
-	<label>
-		Input
-		<input name="input" type="text" placeholder={form?.input}/>
-	</label>
-	<button>Generate</button>
-	{#if form}
-		<div style="color: {colors[0]}" >{ colors[0] }</div>
-		<div style="color: {colors[1]}">{ colors[1] }</div>
-		<div style="color: {colors[2]}">{ colors[2] }</div>
-	{/if}
-</form>
+<div class="navbar bg-base-100">
+	<div class="btn btn-ghost normal-case text-xl">Open Palette</div>
+</div>
+<div class="container w6 ml-14 mr-14 mt-10">
+	<form method="POST">
+		<label class="input-group">
+			<span>Input</span>
+			<input class="input input-bordered" name="input" type="text" placeholder={form?.input} />
+		</label>
+		<button class="btn rounded-full">Generate</button>
+		{#if form}
+			<div class="color-cards grid grid-cols-5">
+				{#each colors as color}
+					<div class="card w6" style="color: {color}">
+						<div class="card-body">
+							<div class="w-full h-5" style="background-color: {color}" />
+							<h2 class="card-title">{color}</h2>
+						</div>
+					</div>
+				{/each}
+			</div>
+		{/if}
+	</form>
+</div>

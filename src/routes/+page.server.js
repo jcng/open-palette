@@ -16,9 +16,9 @@ export const actions = {
 
         const completion = await openai.createCompletion({
             model: "text-davinci-003",
-            prompt: `Three hexcode colors for a \"${inputData}\" aesthetic:`,
-            temperature: 0.7,
-            max_tokens: 27,
+            prompt: `Five hexcode colors for a \"${inputData}\" aesthetic:`,
+            temperature: 0.3,
+            max_tokens: 45,
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0,
