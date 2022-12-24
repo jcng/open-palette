@@ -10,11 +10,11 @@
 </div>
 <div class="container w6 ml-14 mr-14 mt-10">
 	<form method="POST">
-		<label class="input-group">
+		<label class="input-group justify-center">
 			<span>Input</span>
 			<input class="input input-bordered" name="input" type="text" placeholder={form?.input} />
 		</label>
-		<button class="btn rounded-full">Generate</button>
+		<div style="text-align: center"><button class="btn rounded-full">Generate</button></div>
 		{#if form}
 			<div class="color-cards grid grid-cols-5">
 				{#each colors as color}
