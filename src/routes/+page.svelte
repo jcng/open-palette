@@ -14,7 +14,7 @@
 			<span>Input</span>
 			<input class="input input-bordered" name="input" type="text" placeholder={form?.input} />
 		</label>
-		<div style="text-align: center"><button class="btn rounded-full">Generate</button></div>
+		<div style="text-align: center"><button class="btn rounded-full m-3">Generate</button></div>
 		{#if form}
 			<div class="color-cards grid grid-cols-5">
 				{#each colors as color}
